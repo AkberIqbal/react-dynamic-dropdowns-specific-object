@@ -35,8 +35,8 @@ const Dropdown = () => {
       <span>Country:</span>
       <select onChange={countryChange}>
         <option value="" />
-        {countryData.map(allCountries => {
-          return <option value={allCountries}>{allCountries}</option>;
+        {countryData.map((allCountries, index) => {
+          return <option key={index} value={allCountries}>{allCountries}</option>;
         })}
       </select>
       <br />
@@ -45,8 +45,8 @@ const Dropdown = () => {
           <span>City:</span>{" "}
           <select>
             <option value="" />
-            {countries[selectedCountry].map(allCountries => {
-              return <option value={allCountries}>{allCountries}</option>;
+            {countries[selectedCountry].map((allCountries, indx) => {
+              return <option key={indx} value={allCountries}>{allCountries}</option>;
             })}
           </select>
         </>
